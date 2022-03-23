@@ -8,7 +8,7 @@ export default class HelloWorldGet extends React.Component {
     }
 
     componentDidMount() {
-        axios.get(`https://my-json-server.typicode.com/typicode/demo/comments`).then(res => {
+        axios.get(`https://jsonplaceholder.typicode.com/users`).then(res => {
             console.log(res);
             this.setState({ comments: res.data });
         });
@@ -18,7 +18,7 @@ export default class HelloWorldGet extends React.Component {
         return (
             <ul>
             { this.state.comments.map(comment => (
-                <li key={comment.id}>{comment.body}</li>
+                <li key={comment.id}>{comment.name}</li>
             ))}
             </ul>
         )
