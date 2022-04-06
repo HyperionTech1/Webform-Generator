@@ -15,10 +15,13 @@ public class Driver {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println("Welcome to the Hyperion Technologies Database for Webform Generator");
-		String url = "jdbc:mysql://localhost:3306/webform_generator";
+		//String url = "jdbc:mysql://localhost:3306/webform_generator"; //old
+		String url = "us-cdbr-east-05.cleardb.net"; //for remote
 		//username and password to connect to database
-		String username = "root"; //common username is root
-		String password = "Rootpassword96!";
+		//String username = "root"; //common username is root OLD
+		String username = "b8a8f545836618";
+		//String password = "Rootpassword96!"; OLD
+		String password = "1b858f00";
 		
 		//make connection to INSERT data
 		System.out.println("Press 1 for insert and press 2 for retrieval:");
