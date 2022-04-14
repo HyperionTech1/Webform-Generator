@@ -9,18 +9,20 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "users")
+@Table(name = "name_1")
 public class User {
 	
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-	@Column(name = "First_Name")
-	private String firstname;
-	@Column(name = "Last_Name")
+	//@Column(name = "First_Name")
+	@Column(name = "lastName")
 	private String lastname;
-	
+	//@Column(name = "Last_Name")
+	@Column(name = "firstName")
+	private String firstname;
+
 	public User(String firstname, String lastname) {
 		super();
 		this.firstname = firstname;

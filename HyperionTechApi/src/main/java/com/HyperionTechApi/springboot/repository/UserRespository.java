@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.HyperionTechApi.springboot.entity.User;
 
 @Repository
+//public interface UserRespository extends  JpaRepository<User, Integer> {
 public interface UserRespository extends JpaRepository<User, Long>{
 
 }
