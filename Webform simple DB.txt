@@ -1,0 +1,15 @@
+CREATE TABLE WebformDB
+(
+	TextID INTEGER,
+	TextDescription VARCHAR(63),
+	TextAnswer VARCHAR(63),
+	ButtonID INTEGER,
+	ButtonDescription VARCHAR(63),
+	ButtonAnswer VARCHAR(63),
+	FileUploadID INTEGER,
+	FileUploadDescription VARCHAR(63),
+	FileUploadAnswer LONGBLOB(4294967294),
+	LongTextID INTEGER,
+	LongTextDescription VARCHAR(63),
+	LongTextAnswer VARCHAR(511)
+);
