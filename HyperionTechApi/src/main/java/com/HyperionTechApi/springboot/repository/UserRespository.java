@@ -7,6 +7,7 @@ import com.HyperionTechApi.springboot.entity.User;
 
 @Repository
 //public interface UserRespository extends  JpaRepository<User, Integer> {
+// Repository is spelled wrong here but we went with it because it works- 3Apr22
 public interface UserRespository extends JpaRepository<User, Long>{
 
 }

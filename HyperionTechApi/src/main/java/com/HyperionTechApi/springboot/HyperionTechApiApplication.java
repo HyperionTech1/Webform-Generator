@@ -13,19 +13,22 @@ public class HyperionTechApiApplication implements CommandLineRunner {
     public static void main(String[] args)
     {
         System.out.println("Welcome to the Hyperion technologies Database for w.g.");
-        System.out.println("THIS IS A TESTTTTTTT");
-        SpringApplication.run(HyperionTechApiApplication.class, args);
+        System.out.println("THIS IS A TEST OF OUR API FOR FORMS");
+        SpringApplication.run(HyperionTechApiApplication.class, args); // only needed line of code
     }
 
     @Override
     public void run(String... args) throws Exception
     {
-        System.out.println("in peter parker area");
+        System.out.println("(MC) running.....");
         // Inserting the data in the mysql table.
-        User first = new User("PETER", "PARKER");
-        // ob.save() method
+       // User first = new User(1, 4, "warm haven",0, 2, "textbox description test1", "my first textbox answer", 1, "check box description test123", 1);
+                //TODO: UPDATE THIS
+
+
+        //ob.save() method
         System.out.println("yo");
-        ob.save(first);
+        //ob.save(first);
     }
 }
 
