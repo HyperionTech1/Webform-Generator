@@ -1,8 +1,15 @@
 import React from 'react';
-import { render } from 'react-dom'
+import ReactDOM from 'react-dom'
 import './index.css';
 import App from './Components/App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Router } from 'react-router-dom';
 
-render(<App />, document.getElementById('root'))
+
+ReactDOM.render(
+    <React.StrictMode>
+            <App />
+    </React.StrictMode>,
+    document.getElementById('root')
+);
 

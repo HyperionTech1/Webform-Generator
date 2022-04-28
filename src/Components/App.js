@@ -1,53 +1,30 @@
-
-import React, { Component, Fragment } from 'react'
-import { Header, Footer } from './Layout'
-import Options from './Options'
+import HelloWorld from './HelloWorld';
+import HelloWorldGet from './HelloWorldGet';
+import ResponsiveAppBar from './Layout/Header';
+import { Account } from './Pages/Account';
+import { Home } from './Pages/Home'
+import { Samplewebform } from './Pages/SampleWebForm';
 import { webform, webOptions } from '../store.js'
+import { Paper } from '@mui/material'
+import UserCreated from './Layout/UserCreated';
 
-export default class extends Component {
+function App() {
+  return (
+    <div className="App">
 
-  state = {
-    webOptions,
-    wOption: {}
-  }
+      <ResponsiveAppBar />
 
-  getOptionsByCategory() {
-    return Object.entries(
-      this.state.webOptions.reduce((webOptions, wOption) => {
-        const { webform } = wOption 
+      {/* <Home /> */}
+      <Paper>
+        <Samplewebform />
+        {/* <UserCreated /> */}
+      </Paper>
+      
+      {/* <HelloWorldGet /> */}
 
-        webOptions[webform] = webOptions[webform]
-          ? [...webOptions[webform], wOption]
-          : [wOption]
-
-        return webOptions
-      }, {})
-    )
-  }
-
-  handleOptionSelected = id => {
-    this.setState(({ webOptions }) => ({
-      wOption: webOptions.find(opt => opt.id === id)
-    }))
-  }
-
-  render() {
-    const webOptions = this.getOptionsByCategory(),
-      { wOption } = this.state
-
-    return <Fragment>
-      <Header/>
-
-      <Options
-        wOption = {wOption}
-        webOptions = {webOptions}
-        onSelect = {this.handleOptionSelected}
-      />
-
-      <Footer
-        webform = {webform}
-      />
-    </Fragment>
-  }
-
+      {/* <Account /> */}
+    </div>
+  );
 }
+
+export default App;

@@ -1,8 +1,12 @@
 import React, { Fragment } from 'react'  
-import { Grid, Paper, Typography } from '@mui/material'
+import { Grid, Paper, Typography, Button } from '@mui/material'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
+import { Link, useNavigate } from 'react-router-dom'
+import HelloWorld from '../HelloWorld.js'
+
+
 
 const styles = {
     Paper: {
@@ -14,17 +18,20 @@ const styles = {
         }
 }
 
+
+
 export default ({ 
     webOptions,
     onSelect,
     wOption: {
         id, 
         title = 'Welcome!', 
-        description = 'Please select a component from the left.'
-        } 
+        description = 'Please select a component from the left.',
+        webfunction = ' '
+        }
     }) =>
 <Grid container>
-    <Grid item sm>
+    <Grid item>
         <Paper style = {styles.Paper}>
             {webOptions.map(([group, webOptions]) =>
                 <Fragment>
@@ -36,11 +43,11 @@ export default ({
                     </Typography>
                     <List component = "ul">
                         {webOptions.map(({id, title}) =>
-                            <ListItem button>
-                                <ListItemText 
-                                    primary = {title}
-                                    onClick={() => onSelect(id)}   
-                                />    
+                            <ListItem 
+                              button
+                              onClick={() => onSelect(id)}
+                            > 
+                              <ListItemText primary={title}/>
                             </ListItem>
                         )}
                     </List>
@@ -49,18 +56,18 @@ export default ({
         </Paper>
     </Grid>
     <Grid item sm>
-        <Paper style = {styles.Paper}> 
-            <Typography
-            variant = "h4"
-            >
-                {title}
-            </Typography>
-            <Typography
-                variant = "subtitle1"
-                style = {{marginTop: 20}}
-            >
-                {description}
-            </Typography>
+        <Paper style = {styles.Paper}>
+            <Fragment>
+                <List component = "ul">
+                    {webOptions.map(({id}) =>
+                        <ListItem>
+                            {webfunction}
+                        </ListItem>)}
+                    {<Button 
+                     variant = "contained">Add
+                    </Button>}
+                </List>                
+            </Fragment> 
         </Paper>
     </Grid>
 </Grid>

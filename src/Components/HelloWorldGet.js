@@ -18,7 +18,7 @@ export default class HelloWorldGet extends React.Component {
         return (
             <ul>
             { this.state.comments.map(comment => (
-                <li key={comment.id}>{comment.name}</li>
+                <li key={comment.id}>{comment.email}</li>
             ))}
             </ul>
         )
