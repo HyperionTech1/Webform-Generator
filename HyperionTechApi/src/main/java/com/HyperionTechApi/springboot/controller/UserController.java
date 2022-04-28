@@ -43,7 +43,7 @@ public class UserController {
 	public User updateUser(@RequestBody User user,@PathVariable("id") long userId) {
 		User existingUser = this.userRepository.findById(userId).orElseThrow(() -> new 
 				ResourceNotFoundException("User not Found with id:"+ userId));
-
+		/*
 		existingUser.setWebformID(user.getWebformID());
 		existingUser.setButtonID(user.getButtonID());
 		existingUser.setButtonDescription(user.getButtonDescription());
@@ -54,6 +54,10 @@ public class UserController {
 		existingUser.setCheckboxID(user.getCheckboxID());
 		existingUser.setCheckboxDescription(user.getCheckboxDescription());
 		existingUser.setCheckboxAnswer(user.getCheckboxAnswer());
+		 */
+		existingUser.setFirstName(user.getFirstName());
+		existingUser.setLastName(user.getLastName());
+		existingUser.setEmail(user.getEmail());
 		//save to database
 		return this.userRepository.save(existingUser);
 	}

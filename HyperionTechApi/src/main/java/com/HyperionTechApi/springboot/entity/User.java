@@ -9,13 +9,20 @@ import javax.persistence.Table;
 
 //to retrieve from db we use entity
 @Entity
-@Table(name = "form_1")
+@Table(name = "form_3")
 public class User {
 
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO) // or GenerationType.IDENTITY
 	private long id;
+	@Column(name = "last_name")
+	private String last_name;
+	@Column(name = "first_name")
+	private String first_name;
+	@Column(name = "email")
+	private String email;
+	/*
 	@Column(name = "WebformID")
 	private int webformID;
 	//new for actual webform generator
@@ -39,9 +46,44 @@ public class User {
 	private String checkboxDescription;
 	@Column(name = "checkbox_answer")
 	private int checkboxAnswer;
+	 */
 	// end new
+	public User(String last_name, String first_name, String email)
+	{
+		super();
+		this.last_name = last_name;
+		this.first_name = first_name;
+		this.email = email;
+	}
+		public User() {
+			super();
+		}
+		public long getId() { return id; }
+		public void setId(long id) {this.id = id;}
+
+		public String getLastName() {
+			return last_name;
+		}
+		public void setLastName(String last_name) {
+			this.last_name = last_name;
+		}
+
+		public String getFirstName() {
+			return first_name;
+		}
+		public void setFirstName(String first_name) {
+			this.first_name = first_name;
+		}
+
+		public String getEmail() {
+			return email;
+		}
+		public void setEmail(String email) {
+			this.email = email;
+		}
 
 	//new
+	/*
 	public User(int webformID, int buttonID, String buttonDescription, int buttonAnswer, int textboxID, String textboxDescription, String textboxAnswer, int checkboxID, String checkboxDescription, int checkboxAnswer)
 	{
 		super();
@@ -126,5 +168,7 @@ public class User {
 	public void setCheckboxAnswer(int checkboxAnswer) {
 		this.checkboxAnswer = checkboxAnswer;
 	}
+
+	 */
 	
 }
