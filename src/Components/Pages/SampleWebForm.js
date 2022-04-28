@@ -126,8 +126,13 @@ export function Samplewebform() {
                         Submit
                     </Button>
                 </Stack>
+            </Grid>
+            <Grid container>
+                <Grid item>
+                    <UserCreated />        
+
+                </Grid>
             </Grid>    
-            <UserCreated />
         </form>
     )
 }
