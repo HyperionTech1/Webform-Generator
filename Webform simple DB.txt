@@ -1,15 +1,21 @@
-CREATE TABLE WebformDB
+
+
+CREATE TABLE WebformSimpleDB
 (
-	TextID INTEGER,
-	TextDescription VARCHAR(63),
-	TextAnswer VARCHAR(63),
-	ButtonID INTEGER,
-	ButtonDescription VARCHAR(63),
-	ButtonAnswer VARCHAR(63),
-	FileUploadID INTEGER,
-	FileUploadDescription VARCHAR(63),
-	FileUploadAnswer LONGBLOB(4294967294),
-	LongTextID INTEGER,
-	LongTextDescription VARCHAR(63),
-	LongTextAnswer VARCHAR(511)
+	TextDescription1 VARCHAR(63),
+	TextAnswer1 VARCHAR(63),
+	TextDescription2 VARCHAR(63),
+	TextAnswer2 VARCHAR(63),
+	ButtonDescription1 VARCHAR(63),
+	ButtonAnswer1 VARCHAR(63),
+	ButtonDescription2 VARCHAR(63),
+	ButtonAnswer2 VARCHAR(63),
+	FileUploadDescription1 VARCHAR(63),
+	FileUploadAnswer1 LONGBLOB(4294967294),
+	FileUploadDescription2 VARCHAR(63),
+	FileUploadAnswer2 LONGBLOB(4294967294),
+	LongTextDescription1 VARCHAR(63),
+	LongTextAnswer1 VARCHAR(511),
+	LongTextDescription2 VARCHAR(63),
+	LongTextAnswer2 VARCHAR(511)
 );
