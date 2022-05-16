@@ -9,6 +9,7 @@ import { Paper } from '@mui/material'
 import UserCreated from './Layout/UserCreated';
 import { Fragment } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { DisplayForm } from './FormSettings/DisplayForm'
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
       <ResponsiveAppBar />
       <Routes>
         <Route path="/Home" element={<Home/>} />
-        <Route path="/Forms" element={<Samplewebform/>} />
+        <Route path="/Forms" element={<DisplayForm/>} />
 
       </Routes>
 

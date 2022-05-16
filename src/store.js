@@ -6,49 +6,37 @@ export const webform = [
 
 export const webOptions = [
     {
-        id: 'button',
-        title: 'Button',
-        description: 'add a button',
-        webform: 'Features',
-        webfunction: ''
+        id: 'Button',
+        name: 'this a button bruh',
+        label: '',
+        size: ''
+        
     },
     {
-        id: 'check-box',
-        title: 'Check Box',
-        description: 'add a check box',
-        webform: 'Features',
-        webfunction: ''
+        id: 'Check Box',
+        name: 'cb',
+        label: '',
+        size: ''
+        
     },
     {
-        id: 'short-text',
-        title: 'Short Text',
-        description: 'add a short text',
-        webform: 'Features',
-        webfunction: <TextField
-            id="standard-textarea"
-            label=""
-            placeholder="Short-Text"
-            multiline
-        />
+        id: 'Short Text',
+        name: 'st',
+        label: '',
+        type: '',
+        size: ''
+       
     },
     {
-        id: 'long-text',
-        title: 'Long Text',
-        description: 'add a long text',
-        webform: 'Features',
-        webfunction: <TextField
-            id="outlined-multiline-static"
-            label="Long Text"
-            multiline
-            rows={4}
-            defaultValue="Default Value"
-        />
+        id: 'Long Text',
+        name: '',
+        label: '',
+        size: ''
     },
     {
-        id: 'file-upload',
-        title: 'File Upload',
-        description: 'Upload a file',
-        webform: 'Features',
-        webfunction: ''
+        id: 'File Upload',
+        name: '',
+        label: '',
+        size: ''
     },
 ]

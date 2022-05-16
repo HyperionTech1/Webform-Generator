@@ -48,7 +48,7 @@ export function Samplewebform() {
             email,
         };
     
-        axios.post(`http://localhost:8080/api/users`,
+        axios.post(`https://627733a908221c96846209a2.mockapi.io/api/v1/users`,
         postData
         ).then((response) => {
             console.log(response);

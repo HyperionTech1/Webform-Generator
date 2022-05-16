@@ -23,7 +23,7 @@ export default class UserCreated extends React.Component {
 
 
     componentDidMount() {
-        axios.get(`http://localhost:8080/api/users`)
+        axios.get(`https://627733a908221c96846209a2.mockapi.io/api/v1/users`)
         .then(res => {
             const users = res.data;
             this.setState({ users });
