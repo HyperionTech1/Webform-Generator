@@ -4,7 +4,6 @@ import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import { webOptions } from "../../store"
-import  Settings from './../FormSettings/Settings'
 import { Label } from "@mui/icons-material"
 import DisplayFeat from "../Layout/DisplayFeat"
 import Chip from '@mui/material/Chip';
@@ -30,11 +29,11 @@ export function Home(props) {
 
     const [displayOptions, getOptions] = React.useState('')
 
-    const [webO, wOption] = React.useState(webOptions)
+    // const [webO, wOption] = React.useState(webOptions)
 
-    const gettingOptions=(e)=>{
+    // const gettingOptions=(e)=>{
 
-    }
+    // }
 
     
 
@@ -46,8 +45,8 @@ export function Home(props) {
             e.preventDefault();
     
             const postData = {
-                
-                TextDescription
+                label,
+                feature
             }
             
 
@@ -97,7 +96,7 @@ export function Home(props) {
                             variant="outlined"
                             feature={feature}
                             label="Description"
-                            onChange={(e) => setTextDescription(e.target.value)}
+                            onChange={(e) => setLabel(e.target.value)}
                             fullWidth
                             />  
 
@@ -155,10 +154,10 @@ export function Home(props) {
 
     }
 
-    const handleOptionsSelected =(id)=> {
-        wOption(webOptions.find(opt => opt.id === id))
+    // const handleOptionsSelected =(id)=> {
+    //     wOption(webOptions.find(opt => opt.id === id))
 
-    }
+    // }
 
 
 

@@ -2,7 +2,7 @@ import { ListItem, ListItemButton, ListItemText, List, Grid, Paper } from "@mui/
 import { Fragment } from "react";
 import { Button } from '@mui/material';
 import { webOptions } from "../../store";
-import Settings from "../FormSettings/Settings";
+
 
 export default function DisplayFeat(props) {
     
