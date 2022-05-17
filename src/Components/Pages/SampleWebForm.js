@@ -29,10 +29,8 @@ const initialFValues = {
 
 export function Samplewebform() {
 
-    // const [values, setValues] = useState(initialFValues);
     const classes = styles();
-    // const [post, setPost] = useState(initialFValues);
-    // const baseURL = "";
+  
 
     const [firstName, setFName] = useState('')
     const [lastName, setlName] = useState('')
@@ -57,36 +55,6 @@ export function Samplewebform() {
     }
     
 
-    // const handleInputChange = e=>{
-
-    //     const { name, value } = e.target
-    //     setValues({
-    //         ...values,
-    //         [name]:value
-    //     })
-
-
-        
-    // }
-
-    // const handleSubmit = e=>{
-        
-    //     const { name, value } = e.target
-    //     setPost({
-    //         ...values,
-    //         [name]:value
-    //     })
-
-    //     axios.post(`https://my-json-server.typicode.com/FernandoM0/MockApi/posts`, {name})
-    //     .then(res =>{
-    //         console.log(res);
-    //         console.log(res.data);
-
-    //     })
-        
-
-        
-    // }
 
     return (
         <form className={classes.root}>

@@ -22,20 +22,6 @@ function App() {
 
       </Routes>
 
-      {/* <Home /> */}
-      {/* <Paper>
-        <Samplewebform />
-      </Paper> */}
-      
-
-        {/* <UserCreated /> */}
-      
-
-      
-      
-      {/* <HelloWorldGet /> */}
-
-      {/* <Account /> */}
     </div>
   );
 }

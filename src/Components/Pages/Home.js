@@ -24,6 +24,8 @@ export function Home(props) {
             }
     }
 
+    
+
     const [option, setOption] = React.useState(false)
 
     const [displayOptions, getOptions] = React.useState('')
@@ -44,11 +46,8 @@ export function Home(props) {
             e.preventDefault();
     
             const postData = {
-                name,
-                label,
-                size,
-                type,
-                feature
+                
+                TextDescription
             }
             
 
@@ -67,6 +66,7 @@ export function Home(props) {
         const [label, setLabel] = useState('')
         const [size, setSize] = useState('')
         const [type, setType] = useState('')
+        const [TextDescription, setTextDescription] = useState('')
         const [feature, setFeature] = useState(props.name)
 
 
@@ -96,8 +96,8 @@ export function Home(props) {
                             <TextField
                             variant="outlined"
                             feature={feature}
-                            label="Label"
-                            onChange={(e) => setLabel(e.target.value)}
+                            label="Description"
+                            onChange={(e) => setTextDescription(e.target.value)}
                             fullWidth
                             />  
 
@@ -232,12 +232,7 @@ export function Home(props) {
 
 
                         <h1><b>{option ? null:'Select a Feature from the left'}</b></h1>
-
                         {option && <Setting name={displayOptions} />}
-                        {/* <Setting name={displayOptions} /> */}
-                        {/* {option && <Setting name={webOptions.id} />} */}
-
-                        
                         
 
                     </Fragment>

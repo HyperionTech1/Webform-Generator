@@ -7,39 +7,24 @@ export function DisplayForm(props) {
 
     
     const [features, setFeatures] = useState('')
-    const [label, setLabel] = useState('')
 
-    function createData(label, feature){
-        return {label, feature}
-    }
 
     useEffect(() => {
-        axios.get(`https://627733a908221c96846209a2.mockapi.io/api/v1/features`)
+        axios.get(`https://627733a908221c96846209a2.mockapi.io/api/v1/features/1`)
         .then((response) => {
+            console.log(response)
+            console.log(response.data);
             setFeatures(response.data);
-        })
+        }) 
     }, [])
 
-    // useEffect() => {
-    //     const postData = {
-    //         label,
-    //         feature,
-
-    //     }
-
-    //     axios.get(`https://627733a908221c96846209a2.mockapi.io/api/v1/features`,
-    //     postData
-    //     ).then((response) => {
-    //         console.log(response);
-    //         console.log(response.data);
-    //     })
-    // }
 
 
     return (
         <Grid container>
-            <Grid item>
-                {features.label}
+            <Grid item xs={6}>
+                <h1>Hello </h1>
+                <p>{features.label}</p>
             </Grid>
             
         </Grid>

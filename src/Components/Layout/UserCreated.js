@@ -23,7 +23,12 @@ export default class UserCreated extends React.Component {
 
 
     componentDidMount() {
-        axios.get(`https://627733a908221c96846209a2.mockapi.io/api/v1/users`)
+        axios.get(`
+        
+        
+        
+        
+        `)
         .then(res => {
             const users = res.data;
             this.setState({ users });
@@ -58,22 +63,6 @@ export default class UserCreated extends React.Component {
                 </Table>
             </TableContainer>
 
-
-
-
-            
-            // <List component = "ul">
-            //     {
-            //         this.state.users
-            //         .map(user => 
-            //             <ListItem>
-            //                 {user.firstName}
-            //                 {user.email}
-
-            //             </ListItem>
-            //             )
-            //     }
-            // </List>
 
            
             
