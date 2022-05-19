@@ -1,8 +1,9 @@
-import { Grid } from "@material-ui/core";
-import { ListItem } from "@mui/material";
+import { Grid, Box } from "@material-ui/core";
+import { ListItem, Button } from "@mui/material";
 import axios from "axios";
 import React, { useEffect, useState } from 'react';
-import { TextBox } from "./TextBox";
+import { TextBox, FormButtonSubmit } from "./TextBox";
+import HelloWorldGet from "../HelloWorldGet";
 
 export function DisplayForm(props) {
 
@@ -11,7 +12,7 @@ export function DisplayForm(props) {
     
 
     useEffect(() => {
-        axios.get(`https://627733a908221c96846209a2.mockapi.io/api/v1/features`)
+        axios.get(`http://localhost:8080/api/users`)
         .then((response) => {
             console.log(response)
             console.log(response.data);
@@ -20,19 +21,22 @@ export function DisplayForm(props) {
     }, [])
 
 
-
-
+    
 
     return (
         <Grid container>
-            <Grid item xs={6}>
-                {/* {features.map((f) =>{
-                    return(
-                        <TextBox label={f.label}/>
-                    )
-                })} */}
-                {features.map((f) => <TextBox label={f.label}/>)}
-                {/* <TextBox label={features.label}/> */}
+            <Grid item xs={6}>               
+                {features.map((f) =>
+
+                    <TextBox label={f.textDescription1}/>
+                    
+                )}
+                
+
+                {/* <TextBox label={features.textDescription1}/> */}
+
+                 
+
             </Grid>           
         </Grid>
             

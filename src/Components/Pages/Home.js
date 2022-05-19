@@ -1,10 +1,11 @@
 import React, { Fragment, useState } from "react"
 import { Grid, Paper, Typography, Button, ListItemButton, TextField } from '@mui/material'
+import { Checkbox } from '@mui/material/';
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import { webOptions } from "../../store"
-import { Label } from "@mui/icons-material"
+import { Check, Label } from "@mui/icons-material"
 import DisplayFeat from "../Layout/DisplayFeat"
 import Chip from '@mui/material/Chip';
 import axios from "axios"
@@ -12,6 +13,7 @@ import { Box } from "@material-ui/core"
 
 
 export function Home(props) {
+    
     
     const styles = {
         Paper: {
@@ -24,48 +26,147 @@ export function Home(props) {
     }
 
     
-
+    // set to false to display instruction to select feature 
     const [option, setOption] = React.useState(false)
 
-    const [displayOptions, getOptions] = React.useState('')
+    // setting state to capture user input 
+    const [displayOptions, getOptions] = React.useState([])
 
-    // const [webO, wOption] = React.useState(webOptions)
 
-    // const gettingOptions=(e)=>{
+    const ShortText=()=> {
+        
+        const [textDescription1, setText] = useState('')
 
-    // }
-
+        const onSubmitText = (e) => {
+            e.preventDefault();
     
+            const postData = {
+                textDescription1
+            }
+    
+            axios.put(`http://localhost:8080/api/users/37`,
+            postData
+            ).then((response) => {
+                console.log(response.data)
+            })
+            
+            
+    
+        }
+        
+
+        
+
+        return (
+            <Grid>
+                <Typography variant="h3" gutterBottom component="div">
+                    <Chip label="Short Text" />
+                </Typography>
+                <Grid container spacing={2}>
+                    <Grid container direction={"column"} item xs={3} spacing={2}>
+                        <TextField
+                        variant="outlined"
+                        label="Short Text Label"
+                        onChange={(e) => setText(e.target.value)}
+                        fullWidth
+                        />
+                    </Grid>
+                    <Box mt={1} m={2}>
+                            <Button 
+                            onClick={onSubmitText}
+                            variant="contained"
+                            >
+                            Submit
+                            </Button>
+
+                        </Box>
+                </Grid>
+            </Grid>
+        )
+    }
+
+    const ButtonForm=()=> {
+
+        const [buttonDescription1, setText] = useState('')
+
+        const onSubmitText = (e) => {
+            e.preventDefault();
+    
+            const postData = {
+                buttonDescription1
+            }
+    
+            axios.put(`http://localhost:8080/api/users/37`,
+            postData
+            ).then((response) => {
+                console.log(response.data)
+            })
+            
+            
+    
+        }
+
+
+        return (
+            <Grid>
+                <Typography variant="h3" gutterBottom component="div">
+                    <Chip label="Button" />
+                </Typography>
+                <Grid container spacing={2}>
+                    <Grid container direction={"column"} item xs={3} spacing={2}>
+                        <TextField
+                        variant="outlined"
+                        label="Button Label"
+                        onChange={(e) => setText(e.target.value)}
+                        fullWidth
+                        />
+                    </Grid>
+                    <Box mt={1} m={2}>
+                            <Button 
+                            onClick={onSubmitText}
+                            variant="contained"
+                            >
+                            Submit
+                            </Button>
+
+                        </Box>
+                </Grid>
+            </Grid>
+        )
+    }
+
 
     const Setting = (props) => {
         const theId = props.name
 
 
-        function onCreateSettings(e) {
+        const onCreateSettings = (e) => {
             e.preventDefault();
-    
+            
+            // data to be sent to backend 
             const postData = {
-                label,
-                feature
+                textDescription1
             }
             
 
-            axios.post('https://627733a908221c96846209a2.mockapi.io/api/v1/features',
+            axios.post(`http://localhost:8080/api/users`,
             postData
             ).then((response) => {
                 console.log(response)
                 console.log(response.data)
             })
+
+
         }
 
-        // if (webOptions.some(e => e.id === props.name)){
+        // declaring data state to send to backend
+        // const [name, setName] = useState('')
+        // const [label, setLabel] = useState('')
+        // const [size, setSize] = useState('')
+        // const [type, setType] = useState('')
+        const [textDescription1, setTextDescription] = useState('')
 
-        // }
-        const [name, setName] = useState('')
-        const [label, setLabel] = useState('')
-        const [size, setSize] = useState('')
-        const [type, setType] = useState('')
-        const [TextDescription, setTextDescription] = useState('')
+        // using prop.name to get the feature that is being clicked 
         const [feature, setFeature] = useState(props.name)
 
 
@@ -96,7 +197,7 @@ export function Home(props) {
                             variant="outlined"
                             feature={feature}
                             label="Description"
-                            onChange={(e) => setLabel(e.target.value)}
+                            onChange={(e) => setTextDescription(e.target.value)}
                             fullWidth
                             />  
 
@@ -107,7 +208,7 @@ export function Home(props) {
                     <Grid container direction={"column"} item xs={3} spacing={2}>
                         
 
-                        <Grid item> 
+                        {/* <Grid item> 
 
                             <TextField
                             variant="outlined"
@@ -127,7 +228,7 @@ export function Home(props) {
                             /> 
 
 
-                        </Grid>
+                        </Grid> */}
 
                         <Box mt={1} m={2}>
                             <Button 
@@ -146,61 +247,23 @@ export function Home(props) {
         )
        
     }
-    
 
+
+    
+    
+    // when one of the features on the left is clicked 
+    // set setOption to true to display input for feature
     const handleOptions=(e)=>{
         getOptions(e.target.id)
         setOption(true)
 
     }
 
-    // const handleOptionsSelected =(id)=> {
-    //     wOption(webOptions.find(opt => opt.id === id))
-
-    // }
-
-
-
-
-
-
-    // const featureObj = []
-
-    // const found = featureObj.find(function (webfunction) {
-    //     return webfunction
-    // })
-
-
-
-    //  const [id, opt] = React.useState()
-
-    // for (let feat of webOptions) {
-    //     const minRows = (
-    //         <tr key={feat.id}>
-    //             <td key={1}>{feat.id}</td>
-    //             <td key={2}>{feat.title}</td>
-    //             <td key={3}>{feat.description}</td>
-    //             <td key={4}>{feat.webfunction}</td>
-    //         </tr>
-    //     )
-    //     featureObj.push(minRows);
-    // }
-
-    // for (const [key, value] of Object.entries(webOptions)) {
-    //     console.log(`${key}: ${value}`);
-    //     featureObj
-    // }
 
     return (
         <Grid container>
             <Grid item>
                 <Paper style = {styles.Paper}> 
-                {/* <DisplayFeat name="Button" />
-                <DisplayFeat name="Check Box" />
-                <DisplayFeat name="Short Text" />
-                <DisplayFeat name="Long Text" />
-                <DisplayFeat name="File" /> */}
-                    
                     
                     {webOptions.map((f) => 
                         
@@ -212,17 +275,8 @@ export function Home(props) {
                             <option id={f.id}>{f.id}</option>                                             
                         </ListItemButton>
                         
-                    )}
-                    {/* {webOptions.map((f)=>(
-                        <ListItem
-                            button
-                            onClick={handleOptions}
-                            >
-                            <ListItemText primary={f.id}/>
-                        </ListItem>
-                    ))} */}
-                    
-                    
+                    )}  
+             
                 </Paper>
             </Grid>
             <Grid item sm>
@@ -232,6 +286,15 @@ export function Home(props) {
 
                         <h1><b>{option ? null:'Select a Feature from the left'}</b></h1>
                         {option && <Setting name={displayOptions} />}
+
+                        {/* {webOptions.map((d) => 
+                            <Setting name={d.id}/>
+                        )} */}
+                        {/* <ShortText/>
+                        <ButtonForm/> */}
+
+                        
+
                         
 
                     </Fragment>

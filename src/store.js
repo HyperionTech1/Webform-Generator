@@ -6,37 +6,18 @@ export const webform = [
 
 export const webOptions = [
     {
-        id: 'Button',
-        name: 'this a button bruh',
-        label: '',
-        size: ''
+        id: 'Button'
         
     },
     {
-        id: 'Check Box',
-        name: 'cb',
-        label: '',
-        size: ''
+        id: 'Check Box'
         
     },
     {
-        id: 'Short Text',
-        name: 'st',
-        label: '',
-        type: '',
-        size: ''
+        id: 'Short Text'
        
     },
     {
-        id: 'Long Text',
-        name: '',
-        label: '',
-        size: ''
-    },
-    {
-        id: 'File Upload',
-        name: '',
-        label: '',
-        size: ''
+        id: 'Long Text'
     },
 ]
