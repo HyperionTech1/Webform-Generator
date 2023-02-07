@@ -48,7 +48,7 @@ export const TextBox = (props) => {
                         />
                     </Grid>
                 </Grid>
-                <Box mt={1} m={2}>
+                {/* <Box mt={1} m={2}>
                         
                         <Button 
                         onClick={textInput}
@@ -57,7 +57,7 @@ export const TextBox = (props) => {
                         Submit
                         </Button>
 
-                    </Box> 
+                    </Box>  */}
             </Grid>
         </Grid>
 
